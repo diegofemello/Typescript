@@ -1,1 +1,2 @@
-console.log('teste')
+import './js/form-control';
+import './js/my-player';
