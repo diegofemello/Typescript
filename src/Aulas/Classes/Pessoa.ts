@@ -1,11 +1,26 @@
-export class Pessoa {
+type TipoNome = {
+  nome: string;
+  sobrenome: string;
+};
+
+type TipoPessoa = TipoNome & {
+  idade: number;
+  nomeCompleto(): string;
+};
+
+// interface TipoPessoa2 extends TipoNome {
+//   idade: number;
+//   nomeCompleto(): string;
+// }
+
+export class Pessoa implements TipoPessoa {
   static idadePadrao = 0;
   static cpfPadrao = '000.000.000-00';
 
   constructor(
-    private _nome: string,
-    private _sobrenome: string,
-    private _idade: number,
+    protected _nome: string,
+    protected _sobrenome: string,
+    protected _idade: number,
     protected _cpf: string,
   ) {
     this.cpf = _cpf;
@@ -43,7 +58,7 @@ export class Pessoa {
     this._cpf = valor.replace(/\D/g, '');
   }
 
-  getNomeCompleto(): string {
+  nomeCompleto(): string {
     return this._nome + ' ' + this._sobrenome;
   }
 
@@ -74,7 +89,7 @@ export class Cliente extends Pessoa {
   getDadosCliente(): string {
     return (
       'Nome: ' +
-      this.getNomeCompleto() +
+      this.nomeCompleto() +
       '\n' +
       'Idade: ' +
       this.idade +
@@ -92,18 +107,28 @@ export class Aluno extends Pessoa {}
 
 const pessoa = new Pessoa('Pessoa', 'Santos', 21, '123.456.789-014344');
 pessoa.sobrenome = 'OutroSobrenome';
-// console.log(pessoa);
+console.log(pessoa);
 
-// const aluno = new Aluno('Aluno', 'Santos', 21, '123.456.789-01323232');
-// console.log(aluno.getNomeCompleto(), aluno.idade);
+const aluno = new Aluno('Aluno', 'Santos', 21, '123.456.789-01323232');
+console.log(aluno.nomeCompleto(), aluno.idade);
 
-// const cliente = new Cliente(
-//   'Cliente',
-//   'Santos',
-//   21,
-//   '123.456.789-01',
-//   '21 992287892'
-// console.log(cliente.getDadosCliente());
+const cliente = new Cliente(
+  'Cliente',
+  'Santos',
+  21,
+  '123.456.789-01',
+  '21 992287892',
+);
+console.log(cliente.getDadosCliente());
 
-// const pessoaSemIdadeSemCPF = Pessoa.criaPessoa('Diego', 'Mello');
-// console.log(pessoaSemIdadeSemCPF);
+const pessoaSemIdadeSemCPF = Pessoa.criaPessoa('Diego', 'Mello');
+console.log(pessoaSemIdadeSemCPF.nomeCompleto());
+
+const pessoaObj: TipoPessoa = {
+  nomeCompleto: () => pessoaObj.nome + ' ' + pessoaObj.sobrenome,
+  nome: 'João',
+  sobrenome: 'Silva',
+  idade: 30,
+};
+
+console.log(pessoaObj.nomeCompleto());

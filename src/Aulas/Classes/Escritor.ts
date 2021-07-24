@@ -46,6 +46,7 @@ const caneta = new Caneta('Caneta');
 const impressora = new Impressora('Impressora');
 
 escritor.ferramenta = caneta;
+escritor.ferramenta = impressora;
 escritor.escrever();
 escritor.ferramenta = null;
 escritor.escrever();
