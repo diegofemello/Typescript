@@ -1,30 +1,31 @@
 /* eslint-disable */
-
-
 // Tipos básicos
-const nome = 'Luiz';
-const idade = 25;
-const sexo = 'M';
-const aposentado = false;
-const dataNascimento: Date = new Date();
-const dataAposentacao: Date = new Date();
-const salario = 0;
-const salarioFixo = true;
+  var nome = 'Luiz';
+  var idade = 25;
+  var sexo = 'M';
+  var aposentado = false;
+  var dataNascimento: Date = new Date();
+  var dataAposentacao: Date = new Date();
+  var salario = 0;
+  var salarioFixo = true;
 
-const arrayDeNumeros: number[] = [1, 2, 3, 4, 5];
-const arrayDeString: string[] = ['a', 'b', 'c', 'd', 'e'];
-const arrayDeBoolean: boolean[] = [true, false, true, false, true];
-const arrayDeObjeto: Object[] = [{ nome: 'Luiz' }, { nome: 'João' }];
+  var arrayDeNumeros: number[] = [1, 2, 3, 4, 5];
+  var arrayDeString: string[] = ['a', 'b', 'c', 'd', 'e'];
+  var arrayDeBoolean: boolean[] = [true, false, true, false, true];
+  var arrayDeObjeto: Object[] = [{ nome: 'Luiz' }, { nome: 'João' }];
 
-const pessoa: { nome: string; idade: number; sexo: string; aposentado: boolean; dataNascimento: Date; dataAposentacao: Date; salario: number; salarioFixo: boolean; } = {nome, idade, sexo, aposentado, dataNascimento, dataAposentacao, salario, salarioFixo};
+  var pessoa2: { nome: string; idade: number; sexo: string; aposentado: boolean; dataNascimento: Date; dataAposentacao: Date; salario: number; salarioFixo: boolean; } = {nome, idade, sexo, aposentado, dataNascimento, dataAposentacao, salario, salarioFixo};
 
-// console.log(pessoa)
-// console.log(arrayDeObjeto)
+  // console.log(pessoa2)
+  // console.log(arrayDeObjeto)
 
-function soma(a: number, b: number): number {
+  function soma(a: number, b: number): number {
     return a + b;
-}
+  }
 
-const soma2: (x: number, y: number) => number = (x,y) => x + y;
+  var soma2: (x: number, y: number) => number = (x,y) => x + y;
 
-console.log(soma(5,7))
+  console.log(soma(5,7))
+
+
+
