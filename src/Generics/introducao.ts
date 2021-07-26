@@ -18,3 +18,5 @@ const arraynumber = [1, 2, 3, 4, 5, 4, 8, -1];
 
 console.log(arraynumber.filter((value) => value < 5));
 console.log(meuFilter(arraynumber, (value) => value < 5));
+
+export default 1;

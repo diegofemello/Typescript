@@ -8,3 +8,5 @@ const obj2 = { c: 'valor3', d: 'valor4' };
 
 const uniao = unirObjetos(obj1, obj2);
 console.log(uniao);
+
+export default 1;

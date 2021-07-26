@@ -14,3 +14,5 @@ function minhaPromise(): Promise<number> {
 }
 
 promiseAsync().then((resultado) => console.log(resultado + 1));
+
+export default 1;

@@ -24,3 +24,5 @@ const aluno2: PersonProtocol2<string, number> = {
 
 console.log(aluno1);
 console.log(aluno2);
+
+export default 1;

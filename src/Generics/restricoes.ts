@@ -12,3 +12,5 @@ const colors = obterChave(animal1, 'color');
 const nameanimal = obterChave(animal1, 'name');
 
 console.log(colors, nameanimal);
+
+export default 1;
